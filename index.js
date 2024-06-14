@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/users", require("./routeHandler/userHandler"));
 app.use("/api/courses", require("./routeHandler/coursesHandler"));
+app.use("/api/tutors", require("./routeHandler/tutorHandler.js"));
 
 // Default error handler
 function errorHandler(err, req, res, next) {
