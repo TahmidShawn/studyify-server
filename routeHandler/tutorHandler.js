@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const tutor = new Tutor(req.body);
-  console.log('tutor',tutor);
+  console.log("tutor", tutor);
 
   try {
     const newTutor = await tutor.save();
@@ -23,3 +23,16 @@ router.post("/", async (req, res) => {
   }
 });
 module.exports = router;
+
+router.get("/email/:email", async (req, res) => {
+  try {
+    const tutor = await Tutor.findOne({ tutorEmail: req.params.email });
+    if (tutor) {
+      res.json({ exists: true });
+    } else {
+      res.json({ exists: false });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
