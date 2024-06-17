@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    photoUrl: {
+      type: String,
+      required: true,
+    },
   },
   {
     collection: "users",

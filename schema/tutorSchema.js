@@ -4,10 +4,12 @@ const tutorSchema = new mongoose.Schema({
   tutorName: {
     type: String,
     required: true,
+    immutable: true,
   },
   tutorEmail: {
     type: String,
     required: true,
+    immutable: true,
   },
   tutorImage: {
     type: String,

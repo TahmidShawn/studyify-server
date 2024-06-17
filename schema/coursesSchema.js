@@ -42,6 +42,10 @@ const coursesSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    author_email: {
+      type: String,
+      required: true,
+    },
   },
 
   { collection: "courses" }
